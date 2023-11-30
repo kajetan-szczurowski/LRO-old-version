@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Let's roll one!</title>
+    <link rel="icon" type="image/x-icon" href="\favicon.png">
+</head>
+<body>
+
+        <div id = "map-container">
+          <div id = "map-and-ini" />
+              <canvas id = "map"></canvas>
+               <div id="initiative-window"></div>
+          </div>
+            
+          <div class = "map-controls-div">
+               <div class = "color-picker-box">
+                    <div class = "color-picker-label"> Line color:</div>
+                    <input type = "color" id = "line-color-picker" class = "color-picker">
+               </div>
+
+               <button id = "show-map-button" class = "playable_box playable_font">Fullscreen map</button>
+               <button id = "show-controls-button" class = "playable_box playable_font">Map controls</button>
+          </div>
+
+          <div>
+               <div id = "character_choice" class="playable_font playable_box">
+                    Playable characters:
+                    <br />
+                    <form id = "characters_form">
+                    <input type="text" id = "characters_input">
+                    </form>
+              </div>
+          
+              <div id = "chosen_characters_display"></div>
+          </div>
+        </div>
+
+        <dialog id = "big-map-dialog">
+          <canvas id = "big-map-in-dialog"></canvas>
+        </dialog>
+
+        <dialog id = "controls-dialog" class = "playable_box playable_font">
+          <h2> Map controls: </h2>
+
+          <ul> 
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Turn Off / Turn on mini map:
+                    </div>
+                    <div className = "controls-key"> 
+                         Control
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Zoom fullscreen map:
+                    </div>
+                    <div className = "controls-key"> 
+                         (Hold) Shift
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Start measuring:
+                    </div>
+                    <div className = "controls-key"> 
+                         R
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Stop measuring:
+                    </div>
+                    <div className = "controls-key"> 
+                         T
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Scroll map:
+                    </div>
+                    <div className = "controls-key"> 
+                         (Hold) Shift
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Scroll map faster:
+                    </div>
+                    <div className = "controls-key"> 
+                         (Hold) Shift + Left Alt
+                    </div>  
+               </li> 
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Emphasize part of map:
+                    </div>
+                    <div className = "controls-key"> 
+                         Double left click
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Draw line:
+                    </div>
+                    <div className = "controls-key"> 
+                         `
+                    </div>  
+               </li>
+
+               <li className = "controls-item"> 
+                    <div className = "controls-label"> 
+                         Turn on drawing line orto mode:
+                    </div>
+                    <div className = "controls-key"> 
+                         (Hold) `
+                    </div>  
+               </li>
+
+          </ul>
+
+        </dialog>
+
+
+        <div id="message-container"></div>
+        <form id="send-container">
+        <input type="text" id="message-input" autocomplete="off">
+        </form>
+
+       
+
+
+    <div class = "modal" id = "modal">
+         <div class = "modal-header">
+              <div class = "title" id = "modal-title"></div>
+              <button id = "modal-close-button" class = "close-button">&times;</button>
+         </div>
+         <div class = "modal-body" id = "modal-body"></div>
+     </div>
+
+    <div id = "overlay"></div>
+    <!-- It is used for graying background while reading popup windows -->
+    
+    <!-- GM's collapsible list of maps and assets -->
+    <div id = "maps_and_assets">
+          <div class = "maps_form">
+               <button type="button" class="collapsible_button" id= "maps_button">Maps</button>
+               <div class="GM_list" id = "maps_list" >
+               Tu będą wyświetlały się mapy
+               </div>
+          </div>
+
+          <div class = "assets_form">
+               <button type="button" class="collapsible_button" id= "assets_button">Assets</button>
+               <div class="GM_list" id = "assets_list" >
+               Tu będą wyświetlały się assety
+               </div>
+          </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+       
+    </script>
+
+
+<script src = "/misc.js"></script>
+<script src = "/map_engine.js"></script>
+<script src = "/map_service.js"></script>
+<script src = "/chat.js"></script>
+<script src = "/character_sheet_engine.js"></script>
+<script src = "/character_stats_engine.js"></script>
+<script src = "/chat_engine.js"></script>
+<script src = "/window_engine.js"></script>
+<script src = "/chosen_champions.js"></script>
+<script src = "/main.js"></script>
+
+</body>
+</html>
